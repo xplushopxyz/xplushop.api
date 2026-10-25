@@ -33,3 +33,16 @@ app.post('/api/v1/orders', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('API running on http://localhost:' + PORT));
+
+// Issue #4 - Payment Gateway
+app.post('/api/v1/webhooks/toyyibpay', (req, res) => {
+  console.log("ToyyibPay webhook:", req.body);
+  res.json({ success: true });
+});
+
+app.get('/api/v1/payments/methods', (req, res) => {
+  res.json([
+    { id: "toyyibpay", name: "FPX/E-Wallet" },
+    { id: "stripe", name: "Card" }
+  ]);
+});
