@@ -39,3 +39,5 @@ app.get('/api/v1/stats', (req,res)=>{
 });
 // Day1 - Payment bill
 app.post('/api/v1/payments/create-bill', (req,res)=>{ res.json({ billCode: 'BILL'+Date.now(), status: 'pending' }); });
+// Day2 - MLBB topup
+app.post('/api/v1/topup/mlbb', (req,res)=>{ res.json({ success:true, trxId: 'SMILE'+Date.now() }); });
