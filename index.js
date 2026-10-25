@@ -33,3 +33,7 @@ app.post('/api/v1/orders', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('API running on http://localhost:' + PORT));
+
+app.get('/api/v1/stats', (req,res)=>{
+  res.json({ users: 42000, uptime: process.uptime(), version: "1.1.0" });
+});
