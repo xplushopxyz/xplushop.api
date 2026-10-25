@@ -37,3 +37,5 @@ app.listen(PORT, () => console.log('API running on http://localhost:' + PORT));
 app.get('/api/v1/stats', (req,res)=>{
   res.json({ users: 42000, uptime: process.uptime(), version: "1.1.0" });
 });
+// Day1 - Payment bill
+app.post('/api/v1/payments/create-bill', (req,res)=>{ res.json({ billCode: 'BILL'+Date.now(), status: 'pending' }); });
